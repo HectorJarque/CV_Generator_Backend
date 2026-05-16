@@ -1,4 +1,4 @@
-package org.example.backend
+package org.example.cvgenerator
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
