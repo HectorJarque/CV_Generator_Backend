@@ -1,5 +1,7 @@
 package org.example.cvgenerator.domain.model
 
-data class ExportFormat(
-    val id: Int,
-)
+enum class ExportFormat {
+    PDF,
+    PNG,
+    SVG
+}
