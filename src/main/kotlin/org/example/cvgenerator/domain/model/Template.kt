@@ -1,5 +1,7 @@
 package org.example.cvgenerator.domain.model
 
-data class Template(
-    val id: Int,
-)
+enum class Template {
+    CLASSIC,
+    MODERN,
+    EUROPASS
+}
