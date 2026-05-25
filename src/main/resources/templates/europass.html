@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Europass CV — {{fullName}}</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9pt;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            padding: 0;
+            line-height: 1.4;
+        }
+
+        .europass-header {
+            background-color: #003399;
+            color: #ffffff;
+            padding: 20px 40px;
+        }
+
+        .europass-header .label {
+            font-size: 7.5pt;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #aabbdd;
+            margin-bottom: 6px;
+        }
+
+        .europass-header h1 {
+            font-size: 20pt;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .europass-header .job-title {
+            font-size: 10pt;
+            color: #aabbdd;
+        }
+
+        .cv-body {
+            padding: 0 40px 30px 40px;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section-title {
+            background-color: #003399;
+            color: #ffffff;
+            font-size: 9pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            margin-bottom: 0;
+        }
+
+        .section-body {
+            border-left: 3px solid #003399;
+            padding: 10px 0 4px 14px;
+        }
+
+        .info-table {
+            width: 100%;
+        }
+
+        .info-table td {
+            padding: 2px 4px;
+            font-size: 9pt;
+            vertical-align: top;
+        }
+
+        .info-table .label-cell {
+            width: 28%;
+            color: #003399;
+            font-weight: bold;
+            font-size: 8pt;
+            text-transform: uppercase;
+        }
+
+        .entry p {
+            font-size: 9pt;
+        }
+
+        .entry ul {
+            margin-left: 16px;
+            font-size: 9pt;
+        }
+
+        .entry ul li {
+            margin-bottom: 2px;
+        }
+
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skills-table td {
+            padding: 4px 6px;
+            font-size: 8.5pt;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .skills-table {
+            color: #003399;
+            font-weight: bold;
+        }
+
+        .lang-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .lang-table th {
+            background-color: #e8edf8;
+            color: #003399;
+            font-size: 7.5pt;
+            text-transform: uppercase;
+            padding: 4px 6px;
+            text-align: left;
+            border-bottom: 1px solid #003399;
+        }
+
+        .lang-table td {
+            padding: 4px 6px;
+            font-size: 8.5pt;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .lang-table {
+            font-weight: bold;
+        }
+
+        .summary p {
+            font-size: 9pt;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+<div class="europass-header">
+    <div class="label">Curriculum Vitae Europass</div>
+    <h1>{{fullName}}</h1>
+    <div class="job-title">{{jobTitle}}</div>
+</div>
+
+<div class="cv-body">
+
+    <div class="section">
+        <div class="section-title">Información personal</div>
+        <div class="section-body">
+            <table class="info-table">
+                <tr>
+                    <td class="label-cell">Email</td>
+                    <td>{{email}}</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Teléfono</td>
+                    <td>{{phone}}</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Dirección</td>
+                    <td>{{location}}</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">LinkedIn</td>
+                    <td>{{linkedIn}}</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Web / Portfolio</td>
+                    <td>{{website}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section summary">
+        <div class="section-title">Perfil profesional</div>
+        <div class="section-body">
+            <p>{{summary}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Experiencia laboral</div>
+        <div class="section-body">
+            {{workExperience}}
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Educación y formación</div>
+        <div class="section-body">
+            {{education}}
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Habilidades personales</div>
+        <div class="section-body">
+            <table class="skills-table">
+                {{skills}}
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Lenguas</div>
+        <div class="section-body">
+            <table class="lang-table">
+                <tr>
+                    <th>Idioma</th>
+                    <th>Nivel (MCER)</th>
+                </tr>
+                {{languages}}
+            </table>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

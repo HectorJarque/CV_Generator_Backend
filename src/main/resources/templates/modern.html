@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>CV — {{fullName}}</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9.5pt;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .sidebar {
+            float: left;
+            width: 30%;
+            min-height: 100%;
+            background-color: #1e3a5f;
+            color: #ffffff;
+            padding: 30px 18px;
+        }
+
+        .content {
+            float: left;
+            width: 70%;
+            padding: 30px 28px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .sidebar h1 {
+            font-size: 15pt;
+            font-weight: bold;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .sidebar .job-title {
+            font-size: 9pt;
+            color: #a8c4e0;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section-title {
+            font-size: 8pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #a8c4e0;
+            border-bottom: 1px solid #a8c4e0;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar .contact-item {
+            font-size: 8.5pt;
+            margin-bottom: 5px;
+            word-break: break-all;
+        }
+
+        .sidebar {
+            margin-bottom: 6px;
+            font-size: 8.5pt;
+        }
+
+        .sidebar  {
+            font-size: 7.5pt;
+            color: #a8c4e0;
+        }
+
+        .sidebar {
+            margin-bottom: 6px;
+            font-size: 8.5pt;
+        }
+
+        .sidebar {
+            font-size: 7.5pt;
+            color: #a8c4e0;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #1e3a5f;
+            border-bottom: 2px solid #1e3a5f;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+        }
+
+        .entry p {
+            font-size: 9pt;
+            text-align: justify;
+        }
+
+        .entry ul {
+            margin-left: 16px;
+            font-size: 9pt;
+        }
+
+        .entry ul li {
+            margin-bottom: 2px;
+        }
+
+        .summary p {
+            font-size: 9pt;
+            text-align: justify;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+
+    <h1>{{firstName}}<br/>{{lastName}}</h1>
+    <div class="job-title">{{jobTitle}}</div>
+
+    <div class="sidebar-section">
+        <div class="sidebar-section-title">Contacto</div>
+        <div class="contact-item">{{email}}</div>
+        <div class="contact-item">{{phone}}</div>
+        <div class="contact-item">{{location}}</div>
+        <div class="contact-item">{{linkedIn}}</div>
+        <div class="contact-item">{{website}}</div>
+    </div>
+
+    <div class="sidebar-section">
+        <div class="sidebar-section-title">Habilidades</div>
+        {{skills}}
+    </div>
+
+    <div class="sidebar-section">
+        <div class="sidebar-section-title">Idiomas</div>
+        {{languages}}
+    </div>
+
+</div>
+
+<div class="content">
+
+    <div class="section summary">
+        <div class="section-title">Perfil</div>
+        <p>{{summary}}</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Experiencia</div>
+        {{workExperience}}
+    </div>
+
+    <div class="section">
+        <div class="section-title">Educación</div>
+        {{education}}
+    </div>
+
+</div>
+
+<div class="clearfix"></div>
+
+</body>
+</html>
