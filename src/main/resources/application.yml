@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cv-generator-api
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+cv:
+  cors:
+    allowed-origins: http://localhost:4200
+
+  rate-limit:
+
+    max-requests: 10
+    window-seconds: 60
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /api-docs
+
+logging:
+  level:
+    root: INFO
+    org.example.cvgenerator: DEBUG
