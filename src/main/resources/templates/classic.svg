@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="595"
+     height="842">
+    <defs>
+        <style>
+            .bg { fill: #ffffff; }
+            .header-line { stroke: #1a1a1a; stroke-width: 1.5; }
+            .name { font-family: Georgia, serif; font-size: 22px; font-weight:
+            bold; fill: #1a1a1a; letter-spacing: 2; }
+            .job-title { font-family: Georgia, serif; font-size: 11px; fill:
+            #555555; }
+            .contact { font-family: Georgia, serif; font-size: 8px; fill:
+            #333333; }
+            .section-title { font-family: Georgia, serif; font-size: 10px;
+            font-weight: bold; fill: #1a1a1a; letter-spacing: 1.5; }
+            .section-line { stroke: #1a1a1a; stroke-width: 0.8; }
+            .entry-title { font-family: Georgia, serif; font-size: 9px;
+            font-weight: bold; fill: #1a1a1a; }
+            .entry-subtitle{ font-family: Georgia, serif; font-size: 8px;
+            font-style: italic; fill: #555555; }
+            .entry-description { font-family: Georgia, serif; font-size: 8px;
+            fill: #333333; }
+            .skill-name { font-family: Georgia, serif; font-size: 8.5px; fill:
+            #1a1a1a; }
+            .skill-level { font-family: Georgia, serif; font-size: 7.5px; fill:
+            #666666; }
+            .language-name { font-family: Georgia, serif; font-size: 8.5px;
+            fill: #1a1a1a; }
+            .language-level{ font-family: Georgia, serif; font-size: 7.5px;
+            fill: #666666; }
+        </style>
+    </defs>
+
+    <rect class="bg" width="595" height="842"/>
+
+    <text class="name" x="297" y="55" text-anchor="middle">{{fullName}}</text>
+    <text class="job-title" x="297" y="74" text-anchor="middle">{{jobTitle}}
+    </text>
+    <text class="contact" x="297" y="90" text-anchor="middle">{{email}} |
+        {{phone}} | {{location}}
+    </text>
+    <text class="contact" x="297" y="102" text-anchor="middle">{{linkedIn}} |
+        {{website}}
+    </text>
+    <line class="header-line" x1="45" y1="110" x2="550" y2="110"/>
+
+    <text class="section-title" x="45" y="128">PERFIL PROFESIONAL</text>
+    <line class="section-line" x1="45" y1="132" x2="550" y2="132"/>
+    <text class="entry-description" x="45" y="146">{{summary}}</text>
+
+    <text class="section-title" x="45" y="175">EXPERIENCIA LABORAL</text>
+    <line class="section-line" x1="45" y1="179" x2="550" y2="179"/>
+    <g transform="translate(45, 190)">
+        {{workExperience}}
+    </g>
+
+    <text class="section-title" x="45" y="430">EDUCACIÓN</text>
+    <line class="section-line" x1="45" y1="434" x2="550" y2="434"/>
+    <g transform="translate(45, 445)">
+        {{education}}
+    </g>
+
+    <text class="section-title" x="45" y="580">HABILIDADES</text>
+    <line class="section-line" x1="45" y1="584" x2="550" y2="584"/>
+    <g transform="translate(45, 595)">
+        {{skills}}
+    </g>
+
+    <text class="section-title" x="45" y="680">IDIOMAS</text>
+    <line class="section-line" x1="45" y1="684" x2="550" y2="684"/>
+    <g transform="translate(45, 695)">
+        {{languages}}
+    </g>
+
+</svg>

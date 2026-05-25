@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="595"
+     height="842">
+    <defs>
+        <style>
+            .bg { fill: #ffffff; }
+            .header-bg { fill: #003399; }
+            .header-label { font-family: Arial, sans-serif; font-size: 7px;
+            fill: #aabbdd; letter-spacing: 2; }
+            .name { font-family: Arial, sans-serif; font-size: 20px;
+            font-weight: bold; fill: #ffffff; }
+            .job-title { font-family: Arial, sans-serif; font-size: 10px; fill:
+            #aabbdd; }
+            .section-bg { fill: #003399; }
+            .section-title { font-family: Arial, sans-serif; font-size: 8.5px;
+            font-weight: bold; fill: #ffffff; letter-spacing: 1; }
+            .section-border{ stroke: #003399; stroke-width: 2; }
+            .label-cell { font-family: Arial, sans-serif; font-size: 7.5px;
+            font-weight: bold; fill: #003399; }
+            .value-cell { font-family: Arial, sans-serif; font-size: 8px; fill:
+            #1a1a1a; }
+            .entry-title { font-family: Arial, sans-serif; font-size: 9px;
+            font-weight: bold; fill: #1a1a1a; }
+            .entry-subtitle{ font-family: Arial, sans-serif; font-size: 7.5px;
+            fill: #555555; font-style: italic; }
+            .entry-description { font-family: Arial, sans-serif; font-size:
+            7.5px; fill: #333333; }
+            .skill-name { font-family: Arial, sans-serif; font-size: 8px; fill:
+            #1a1a1a; }
+            .skill-level { font-family: Arial, sans-serif; font-size: 7.5px;
+            fill: #003399; font-weight: bold; }
+            .language-name { font-family: Arial, sans-serif; font-size: 8px;
+            fill: #1a1a1a; font-weight: bold; }
+            .language-level{ font-family: Arial, sans-serif; font-size: 7.5px;
+            fill: #003399; }
+        </style>
+    </defs>
+
+    <rect class="bg" width="595" height="842"/>
+
+    <rect class="header-bg" x="0" y="0" width="595" height="75"/>
+    <text class="header-label" x="40" y="20">CURRICULUM VITAE EUROPASS</text>
+    <text class="name" x="40" y="48">{{fullName}}</text>
+    <text class="job-title" x="40" y="64">{{jobTitle}}</text>
+
+    <rect class="section-bg" x="0" y="82" width="595" height="16"/>
+    <text class="section-title" x="40" y="93">INFORMACIÓN PERSONAL</text>
+    <line class="section-border" x1="40" y1="98" x2="40" y2="175"/>
+
+    <text class="label-cell" x="55" y="112">EMAIL</text>
+    <text class="value-cell" x="185" y="112">{{email}}</text>
+    <text class="label-cell" x="55" y="126">TELÉFONO</text>
+    <text class="value-cell" x="185" y="126">{{phone}}</text>
+    <text class="label-cell" x="55" y="140">DIRECCIÓN</text>
+    <text class="value-cell" x="185" y="140">{{location}}</text>
+    <text class="label-cell" x="55" y="154">LINKEDIN</text>
+    <text class="value-cell" x="185" y="154">{{linkedIn}}</text>
+    <text class="label-cell" x="55" y="168">WEB</text>
+    <text class="value-cell" x="185" y="168">{{website}}</text>
+
+    <rect class="section-bg" x="0" y="182" width="595" height="16"/>
+    <text class="section-title" x="40" y="193">PERFIL PROFESIONAL</text>
+    <line class="section-border" x1="40" y1="198" x2="40" y2="230"/>
+    <text class="value-cell" x="55" y="214">{{summary}}</text>
+
+    <rect class="section-bg" x="0" y="238" width="595" height="16"/>
+    <text class="section-title" x="40" y="249">EXPERIENCIA LABORAL</text>
+    <line class="section-border" x1="40" y1="254" x2="40" y2="450"/>
+    <g transform="translate(55, 265)">
+        {{workExperience}}
+    </g>
+
+    <rect class="section-bg" x="0" y="460" width="595" height="16"/>
+    <text class="section-title" x="40" y="471">EDUCACIÓN Y FORMACIÓN</text>
+    <line class="section-border" x1="40" y1="476" x2="40" y2="580"/>
+    <g transform="translate(55, 487)">
+        {{education}}
+    </g>
+
+    <rect class="section-bg" x="0" y="590" width="595" height="16"/>
+    <text class="section-title" x="40" y="601">HABILIDADES</text>
+    <line class="section-border" x1="40" y1="606" x2="40" y2="670"/>
+    <g transform="translate(55, 617)">
+        {{skills}}
+    </g>
+
+    <rect class="section-bg" x="0" y="678" width="595" height="16"/>
+    <text class="section-title" x="40" y="689">LENGUAS</text>
+    <line class="section-border" x1="40" y1="694" x2="40" y2="800"/>
+
+    <rect fill="#e8edf8" x="55" y="697" width="480" height="14"/>
+    <text class="label-cell" x="60" y="708">IDIOMA</text>
+    <text class="label-cell" x="260" y="708">NIVEL (MCER)</text>
+
+    <g transform="translate(55, 715)">
+        {{languages}}
+    </g>
+
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="595"
+     height="842">
+    <defs>
+        <style>
+            .bg-sidebar { fill: #1e3a5f; }
+            .bg-content { fill: #ffffff; }
+            .name { font-family: Arial, sans-serif; font-size: 18px;
+            font-weight: bold; fill: #ffffff; }
+            .job-title { font-family: Arial, sans-serif; font-size: 9px; fill:
+            #a8c4e0; }
+            .sidebar-label { font-family: Arial, sans-serif; font-size: 7px;
+            fill: #a8c4e0; letter-spacing: 1.5; font-weight: bold; }
+            .sidebar-line { stroke: #a8c4e0; stroke-width: 0.6; }
+            .contact { font-family: Arial, sans-serif; font-size: 7.5px; fill:
+            #ffffff; }
+            .section-title { font-family: Arial, sans-serif; font-size: 10px;
+            font-weight: bold; fill: #1e3a5f; letter-spacing: 1; }
+            .section-line { stroke: #1e3a5f; stroke-width: 1.5; }
+            .entry-title { font-family: Arial, sans-serif; font-size: 9px;
+            font-weight: bold; fill: #1a1a1a; }
+            .entry-subtitle{ font-family: Arial, sans-serif; font-size: 7.5px;
+            fill: #666666; font-style: italic; }
+            .entry-description { font-family: Arial, sans-serif; font-size:
+            7.5px; fill: #333333; }
+            .skill-name { font-family: Arial, sans-serif; font-size: 8px; fill:
+            #ffffff; }
+            .skill-level { font-family: Arial, sans-serif; font-size: 7px; fill:
+            #a8c4e0; }
+            .language-name { font-family: Arial, sans-serif; font-size: 8px;
+            fill: #ffffff; }
+            .language-level{ font-family: Arial, sans-serif; font-size: 7px;
+            fill: #a8c4e0; }
+        </style>
+    </defs>
+
+    <rect class="bg-sidebar" x="0" y="0" width="178" height="842"/>
+    <rect class="bg-content" x="178" y="0" width="417" height="842"/>
+
+    <text class="name" x="20" y="45">{{firstName}}</text>
+    <text class="name" x="20" y="67">{{lastName}}</text>
+    <text class="job-title" x="20" y="82">{{jobTitle}}</text>
+
+    <text class="sidebar-label" x="20" y="108">CONTACTO</text>
+    <line class="sidebar-line" x1="20" y1="112" x2="160" y2="112"/>
+    <text class="contact" x="20" y="126">{{email}}</text>
+    <text class="contact" x="20" y="140">{{phone}}</text>
+    <text class="contact" x="20" y="154">{{location}}</text>
+    <text class="contact" x="20" y="168">{{linkedIn}}</text>
+    <text class="contact" x="20" y="182">{{website}}</text>
+
+    <text class="sidebar-label" x="20" y="210">HABILIDADES</text>
+    <line class="sidebar-line" x1="20" y1="214" x2="160" y2="214"/>
+    <g transform="translate(20, 225)">
+        {{skills}}
+    </g>
+
+    <text class="sidebar-label" x="20" y="490">IDIOMAS</text>
+    <line class="sidebar-line" x1="20" y1="494" x2="160" y2="494"/>
+    <g transform="translate(20, 505)">
+        {{languages}}
+    </g>
+
+
+    <text class="section-title" x="198" y="35">PERFIL</text>
+    <line class="section-line" x1="198" y1="39" x2="570" y2="39"/>
+    <text class="entry-description" x="198" y="53">{{summary}}</text>
+
+    <text class="section-title" x="198" y="90">EXPERIENCIA</text>
+    <line class="section-line" x1="198" y1="94" x2="570" y2="94"/>
+    <g transform="translate(198, 105)">
+        {{workExperience}}
+    </g>
+
+    <text class="section-title" x="198" y="530">EDUCACIÓN</text>
+    <line class="section-line" x1="198" y1="534" x2="570" y2="534"/>
+    <g transform="translate(198, 545)">
+        {{education}}
+    </g>
+
+</svg>
