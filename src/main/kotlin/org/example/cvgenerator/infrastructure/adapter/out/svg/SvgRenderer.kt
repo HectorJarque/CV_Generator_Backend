@@ -3,6 +3,7 @@ package org.example.cvgenerator.infrastructure.adapter.out.svg
 import org.example.cvgenerator.domain.model.Cv
 import org.example.cvgenerator.domain.model.Template
 import org.example.cvgenerator.domain.port.out.CvRendererPort
+import org.example.cvgenerator.infrastructure.adapter.out.template.HtmlSanitizer.sanitize
 import org.example.cvgenerator.infrastructure.adapter.out.template.TemplateLoader
 import org.springframework.stereotype.Component
 
@@ -12,7 +13,7 @@ class SvgRenderer(
 ) : CvRendererPort {
 
     override fun render(cv: Cv, template: Template): ByteArray {
-        val fileName  = "${template.name.lowercase()}.svg"   // "classic.svg", "modern.svg"…
+        val fileName = "${template.name.lowercase()}.svg"
         val svgContent = templateLoader.load(fileName).replacePlaceholders(cv)
         return svgContent.toByteArray(Charsets.UTF_8)
     }
@@ -22,33 +23,46 @@ class SvgRenderer(
 
         with(cv.personalInfo) {
             result = result
-                .replace("{{firstName}}",   firstName)
-                .replace("{{lastName}}",    lastName)
-                .replace("{{fullName}}",    "$firstName $lastName".trim())
-                .replace("{{jobTitle}}",    jobTitle)
-                .replace("{{email}}",       email)
-                .replace("{{phone}}",       phone)
-                .replace("{{location}}",    location)
-                .replace("{{linkedIn}}",    linkedIn)
-                .replace("{{website}}",     website)
+                .replace("{{firstName}}", firstName.sanitize())
+                .replace("{{lastName}}", lastName.sanitize())
+                .replace("{{fullName}}", "$firstName $lastName".trim().sanitize())
+                .replace("{{jobTitle}}", jobTitle.sanitize())
+                .replace("{{email}}", email.sanitize())
+                .replace("{{phone}}", phone.sanitize())
+                .replace("{{location}}", location.sanitize())
+                .replace("{{linkedIn}}", linkedIn.sanitize())
+                .replace("{{website}}", website.sanitize())
         }
 
-        result = result.replace("{{summary}}", cv.summary)
+        result = result.replace("{{summary}}", cv.summary.sanitize())
 
         result = result.replace("{{workExperience}}", cv.workExperience.joinToString("\n") { exp ->
-            buildWorkExperienceBlock(exp.company, exp.position, exp.startDate, exp.endDate, exp.isCurrent, exp.description)
+            buildWorkExperienceBlock(
+                company = exp.company.sanitize(),
+                position = exp.position.sanitize(),
+                startDate = exp.startDate.sanitize(),
+                endDate = exp.endDate.sanitize(),
+                isCurrent = exp.isCurrent,
+                description = exp.description.sanitize()
+            )
         })
 
         result = result.replace("{{education}}", cv.education.joinToString("\n") { edu ->
-            buildEducationBlock(edu.institution, edu.degree, edu.fieldOfStudy, edu.startDate, edu.endDate)
+            buildEducationBlock(
+                institution = edu.institution.sanitize(),
+                degree = edu.degree.sanitize(),
+                fieldOfStudy = edu.fieldOfStudy.sanitize(),
+                startDate = edu.startDate.sanitize(),
+                endDate = edu.endDate.sanitize()
+            )
         })
 
         result = result.replace("{{skills}}", cv.skills.joinToString("\n") { skill ->
-            buildSkillBlock(skill.name, skill.level.name)
+            buildSkillBlock(name = skill.name.sanitize(), level = skill.level.name)
         })
 
         result = result.replace("{{languages}}", cv.languages.joinToString("\n") { lang ->
-            buildLanguageBlock(lang.name, lang.level.name)
+            buildLanguageBlock(name = lang.name.sanitize(), level = lang.level.name)
         })
 
         return result
@@ -56,8 +70,8 @@ class SvgRenderer(
 
     private fun buildWorkExperienceBlock(
         company: String, position: String,
-        startDate: String, endDate: String, isCurrent: Boolean,
-        description: String
+        startDate: String, endDate: String,
+        isCurrent: Boolean, description: String
     ): String {
         val period = if (isCurrent) "$startDate — Actualidad" else "$startDate — $endDate"
         return """

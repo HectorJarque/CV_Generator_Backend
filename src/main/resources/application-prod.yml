@@ -1,0 +1,3 @@
+cv:
+  cors:
+    allowed-origins: https://HectorJarque.github.io
